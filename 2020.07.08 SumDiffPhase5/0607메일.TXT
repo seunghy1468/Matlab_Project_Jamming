@@ -1,0 +1,69 @@
+안녕하세요 교수님!
+
+이번주는 cross-eye jamming과 cross-polarization jamming 방법을 설명하는 자료를 찾아보았습니다. 
+
+특히, 각 jamming 방법에서 중점적으로 분석했던 자료를 첨부했습니다.
+
+ 
+
+1. cross-eye jamming
+
+첨부되어있는 자료는 cross-eye jamming을 적용한 위상을 수식으로 표현되어 있지 않습니다.
+
+다만 '모노펄스 센서에 대한 크로스 아이 재밍기법의 각도기만 성능 실험' 에서 다음과 같이 
+
+어떤 모델을 예시로 했는지 잘 나와있다고 생각했기 때문에 중점적으로 보았습니다.
+
+ 
+
+jamming 송신기 개수 : 2 개
+
+jamming 송신기들 사이의 거리 : 60 ~ 240 [m] (20m 간격으로 변화하여 관찰)
+
+모노펄스 레이더와 jamming 송신기 사이의 거리 : 15 [m] 
+
+모노펄스 수신 안테나의 각도 추정 범위 : 0 ~ 9 [degree]
+
+ 
+
+jamming 송신기들 사이의 거리가 변수가 되어 실험을 진행한 것이고, 실험 결과는 다음과 같습니다.
+
+ 
+
+jamming 송신기들 사이의 거리 <= 80 [m] : 상호간섭으로 인한 각도기만 효과 저하 
+
+jamming 송신기들 사이의 거리 <=140 [m] : 각도기만효과 증가 (140[m]에서 최대) 
+
+jamming 송신기들 사이의 거리 > 140 [m] : 각도기만효과 감소
+
+ 
+
+즉, 2개 이상의 드론을 활용한다고 가정했을 때, 먼저 이와같이 거리에 따라 재밍효과의 변화를 matlab으로
+
+그려보는 것을 목표로 하고, 이를 위한 수학적인 모델을 찾아보겠습니다.
+
+ 
+
+2. cross-polarization jamming
+
+첨부되어있는 자료는 찾았던 자료 중 유일하게 cross-polarization jamming을 적용하지 않은 것과 적용한 것을 
+
+모노펄스 수신기입장에서 측정했을 때의 위상을 수식으로 표현하고 있어서 중점적으로 보았습니다.
+
+ 
+
+cross-polarization jamming 적용x : chapter 4, equ.11
+
+cross-polarization jamming 적용 : chapter 4, equ.12
+
+cross-polarization jamming와 RMSE의 그래프 : chapter5, fig.5
+
+ 
+
+다음과 같은 chapter 4의 수식은 azi와 elv 모두 적용할 수 있는 수식이라 나와있습니다. 핵심은 cross-polarization 
+
+component의 크기에 따른 기만 효과를 RMSE로 나타내었고, component의 크기가 20 dB 이상일 때 효과적으로 
+
+나타난다는 것이라 생각합니다. 다만 자료에서는 cross-polarization component가 정확히 무엇인지 명시되어있지 않아
+
+matlab으로 그려보기 위해서는 component가 무엇을 뜻하는지 알아봐야할 것 같습니다.
